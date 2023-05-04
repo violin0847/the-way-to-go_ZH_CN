@@ -16,7 +16,9 @@ func main() {
 	an, err := strconv.Atoi(orig)
 	if err != nil {
 		fmt.Printf("orig %s is not an integer - exiting with error\n", orig)
-		return
+		fmt.Println(err)
+		err = fmt.Errorf("orig %s is not an integer - exiting with error\n", orig)
+		fmt.Println(err)
 	}
 	fmt.Printf("The integer is %d\n", an)
 	an = an + 5
